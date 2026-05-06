@@ -1,0 +1,103 @@
+:root {
+    --primary: #ff4d6d;
+    --secondary: #ff85a1;
+    --text: #590d22;
+    --glass: rgba(255, 255, 255, 0.3);
+}
+
+body {
+    margin: 0; padding: 0;
+    width: 100vw; height: 100vh;
+    background: linear-gradient(135deg, #ffafbd, #ffc3a0, #ffafbd);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: 'SF Pro Display', sans-serif;
+    overflow: hidden;
+    color: var(--text);
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Page Transitions (Slide Up Effect) */
+.page {
+    position: absolute;
+    width: 100%; height: 100%;
+    display: flex; justify-content: center; align-items: center;
+    padding: 20px;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    transform: translateY(100vh);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.page.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Glassmorphism Card */
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-radius: 40px;
+    padding: 30px;
+    width: 100%;
+    max-width: 340px;
+    text-align: center;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.1);
+}
+
+/* Photo Gallery styling */
+.photo-frame {
+    margin: 20px 0;
+    border: 10px solid white;
+    transform: rotate(-3deg);
+    transition: 0.5s;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.photo-frame:hover { transform: rotate(0deg) scale(1.05); }
+.memory-img { width: 100%; border-radius: 5px; }
+
+/* Love Meter */
+.meter-container {
+    width: 100%; height: 20px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+#meter-fill {
+    width: 0%; height: 100%;
+    background: var(--primary);
+    transition: width 2s cubic-bezier(0.1, 0, 0.1, 1);
+}
+
+/* Animations */
+.pulse-heart { font-size: 70px; animation: pulse 1s infinite; }
+@keyframes pulse {
+    0% { transform: scale(1); filter: drop-shadow(0 0 0px var(--primary)); }
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 15px var(--primary)); }
+    100% { transform: scale(1); }
+}
+
+.floating-icon { font-size: 50px; animation: float 3s ease-in-out infinite; }
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+button {
+    background: var(--primary);
+    color: white; border: none;
+    padding: 15px 30px; border-radius: 30px;
+    font-weight: bold; width: 100%; margin-top: 15px;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.3);
+}
+
+.initials { font-size: 1.5rem; font-weight: bold; margin: 20px 0; letter-spacing: 5px; }
