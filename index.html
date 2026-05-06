@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Our Love Story</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="heart-container"></div>
+    <div id="sparkle-container"></div>
+
+    <section id="page1" class="page active">
+        <div class="glass-card fade-in">
+            <div class="floating-icon">💌</div>
+            <h1>A Special love to u</h1>
+            <p>I built this little world to show you how much you mean to me.</p>
+            <button class="next-btn" onclick="nextPage(2)">Enter my sweetheart➔</button>
+        </div>
+    </section>
+
+    <section id="page2" class="page">
+        <div class="glass-card">
+            <div class="pulse-heart">❤️</div>
+            <div id="typewriter"></div>
+            <button class="next-btn" onclick="nextPage(3)">See my fav pic ➔</button>
+        </div>
+    </section>
+
+    <section id="page3" class="page">
+        <div class="glass-card">
+            <h2>mine cute bby</h2>
+            <div class="photo-frame">
+                <img src="hlw.jpg.jpeg" alt="Memory 1" class="memory-img">
+                <p class="photo-caption">"The beauty queen..."</p>
+            </div>
+            <button class="next-btn" onclick="nextPage(4)">Play a Game ➔</button>
+        </div>
+    </section>
+
+    <section id="page4" class="page">
+        <div class="glass-card">
+            <h2>Love Calculator</h2>
+            <p>How much do I love you per/secound?</p>
+            <div class="meter-container">
+                <div id="meter-fill"></div>
+            </div>
+            <h3 id="percent-display">0%</h3>
+            <button class="action-btn" onclick="calculateLove()">Calculate</button>
+            <button class="next-btn" id="final-link" style="display:none" onclick="nextPage(5)">One Final Message ➔</button>
+        </div>
+    </section>
+
+    <section id="page5" class="page">
+        <div class="glass-card final-card">
+            <div class="floating-icon">💍</div>
+            <h2>Forever & Always</h2>
+            <p>No matter where life takes us, my heart will always find its way back to you.</p>
+            <div class="initials">You and  Me</div>
+            <button class="reset-btn" onclick="nextPage(1)">Watch Again ❤️</button>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
